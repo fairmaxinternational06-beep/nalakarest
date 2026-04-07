@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nalaka Rest | Nuwara Eliya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Nalaka Rest</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#attractions">Explore</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Home in the Misty Mountains</h1>
+            <p>Experience the serene beauty and cool climate of Nuwara Eliya.</p>
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <section id="amenities" class="amenities">
+        <h2>Our Amenities</h2>
+        <div class="amenities-grid">
+            <div class="card" onclick="openModal('modal-bedroom')">
+                <h3>🛏️ 3 Bedrooms</h3>
+                <p>Spacious and comfortable rooms for a relaxing stay.</p>
+                <span class="click-more">Click for more info ➔</span>
+            </div>
+            <div class="card" onclick="openModal('modal-beds')">
+                <h3>🛏️ 4 Beds</h3>
+                <p>Ample sleeping space, perfect for families and groups.</p>
+                <span class="click-more">Click for more info ➔</span>
+            </div>
+            <div class="card" onclick="openModal('modal-bathroom')">
+                <h3>🚿 2 Bathrooms</h3>
+                <p>Clean and modern with hot water facilities.</p>
+                <span class="click-more">Click for more info ➔</span>
+            </div>
+            <div class="card" onclick="openModal('modal-guests')">
+                <h3>👨‍👩‍👧‍👦 8 Guests Max</h3>
+                <p>Comfortably accommodates up to 8 guests.</p>
+                <span class="click-more">Click for more info ➔</span>
+            </div>
+            <div class="card" onclick="openModal('modal-dining')">
+                <h3>☕ Tea & Cooking Service</h3>
+                <p>Complimentary daily tea and custom meal preparation.</p>
+                <span class="click-more">Click for more info ➔</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>Welcome to <strong>Nalaka Rest</strong>, your perfect getaway nestled in the beautiful misty hills of Nuwara Eliya. Surrounded by lush green tea estates and scenic waterfalls, our retreat is designed to be your 'home away from home'. Whether you are planning a fun family vacation or a peaceful retreat with close friends, Nalaka Rest offers the privacy, comfort, and authentic Sri Lankan hospitality you deserve.</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="room1.jpg" alt="Bedroom View"></div>
+            <div class="gallery-item"><img src="living.jpg" alt="Living Room Area"></div>
+            <div class="gallery-item"><img src="bath.jpg" alt="Modern Bathroom"></div>
+            <div class="gallery-item"><img src="view.jpg" alt="Scenic Outdoor View"></div>
+        </div>
+    </section>
+
+    <section id="rules" class="rules">
+        <h2>Policies</h2>
+        <div class="rules-grid">
+            
+            <div class="rule-item">
+                <h3>🚭 No Smoking</h3>
+                <p>Smoking is strictly prohibited inside the rooms. Please use the outdoor areas.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="attractions" class="attractions">
+        <h2>Nearby Attractions</h2>
+        <p class="section-desc">Explore the beauty of Nuwara Eliya. Here are some popular places near Nalaka Rest.</p>
+        <div class="attractions-grid">
+            
+            <div class="attraction-card">
+                <img src="gregory.jpg" alt="Gregory Lake">
+                <div class="attraction-info">
+                    <h3>Gregory Lake</h3>
+                    <p class="distance">📍 ~2.5 km away</p>
+                    <p>Perfect for relaxing walks, boat rides, and enjoying the cool breeze.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="victoria.jpg" alt="Victoria Park">
+                <div class="attraction-info">
+                    <h3>Victoria Park</h3>
+                    <p class="distance">📍 ~2.0 km away</p>
+                    <p>A beautifully maintained park, ideal for picnics and bird watching.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="pedro.jpg" alt="Pedro Tea Estate">
+                <div class="attraction-info">
+                    <h3>Pedro Tea Estate</h3>
+                    <p class="distance">📍 ~4.5 km away</p>
+                    <p>Explore the lush green tea gardens and see how authentic Ceylon tea is made.</p>
+                </div>
+            </div>
+
+            <div class="attraction-card">
+                <img src="horton.jpg" alt="Horton Plains">
+                <div class="attraction-info">
+                    <h3>Horton Plains</h3>
+                    <p class="distance">📍 ~28 km away</p>
+                    <p>A stunning national park famous for the 'World's End' viewpoint and Baker's Falls.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <h2>Guest Reviews</h2>
+        <div class="review-grid">
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Absolutely beautiful place! The view of the misty mountains is breathtaking. The villa was very spacious and clean. The cooking service was a fantastic touch. Highly recommended!"</p>
+                <h4>- Sarah M.</h4>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"A perfect getaway for our family. Very comfortable beds and the 24-hour hot water was much appreciated in the cool Nuwara Eliya climate. We will definitely come back."</p>
+                <h4>- James T.</h4>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Cozy, quiet, and exactly as described. The host was very accommodating and the complimentary daily tea made us feel right at home. A true Sri Lankan hospitality experience."</p>
+                <h4>- Amandi P.</h4>
+            </div>
+
+        </div>
+        <div class="review-action">
+            <a href="https://wa.me/+94760419130?text=Hello, I would like to leave a review for Nalaka Rest:%0A%0A" target="_blank" class="google-review-btn">
+                📝 Send your Review via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact & Booking</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Nalaka Rest</h3>
+                <p>📍 Nuwara Eliya, Sri Lanka</p>
+                <p>📞 +94 76 041 9130</p> <p>✉️ info@nalakarest.com</p>
+                <a href="https://wa.me/94760419130" class="whatsapp-btn" target="_blank">💬 Message on WhatsApp</a>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+                    <input type="text" id="senderName" placeholder="Your Name" required>
+                    <input type="email" id="senderEmail" placeholder="Your Email" required>
+                    <textarea id="senderMessage" rows="4" placeholder="Your Message / Preferred Booking Dates" required></textarea>
+                    <button type="submit" class="btn">Send via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=6.992100,80.750095&z=17&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Nalaka Rest. All Rights Reserved.</p>
+    </footer>
+
+    <div id="modal-bedroom" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-bedroom')">&times;</span>
+            <h2>🛏️ 3 Bedrooms</h2>
+            <p>Our villa features 3 spacious bedrooms designed for ultimate comfort. Each room includes clean linens, warm blankets for the Nuwara Eliya climate, and beautiful views of the surrounding tea estates.</p>
+            <div class="modal-gallery">
+                <img src="room1.jpg" alt="Bedroom 1">
+                <img src="room2.jpg" alt="Bedroom 2">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-beds" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-beds')">&times;</span>
+            <h2>🛏️ 4 Beds</h2>
+            <p>We provide 4 highly comfortable beds with premium mattresses. The arrangement is perfect for a family or a group of friends, ensuring a restful night's sleep after a day of exploring.</p>
+            <div class="modal-gallery">
+                <img src="bed1.jpg" alt="Beds">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-bathroom" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-bathroom')">&times;</span>
+            <h2>🚿 2 Bathrooms</h2>
+            <p>The property includes 2 fully equipped, modern bathrooms. Both feature 24-hour hot water, clean towels, and essential toiletries for your convenience.</p>
+            <div class="modal-gallery">
+                <img src="bath_full.jpg" alt="Bathroom full view">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-guests" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-guests')">&times;</span>
+            <h2>👨‍👩‍👧‍👦 8 Guests Max</h2>
+            <p>Our retreat is spacious enough to host up to 8 guests comfortably. The large living area and dining space provide plenty of room for everyone to gather and enjoy meals together.</p>
+            <div class="modal-gallery">
+                <img src="living.jpg" alt="Living area">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-dining" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-dining')">&times;</span>
+            <h2>☕ Tea & Cooking Service</h2>
+            <p>Experience true Sri Lankan hospitality with our complimentary refreshing Ceylon tea served every morning and evening. </p>
+            <p><strong>Meal Preparation:</strong> While we do not operate a full restaurant, we offer a dedicated cooking service for our guests. Simply bring your preferred groceries and ingredients, and our staff will happily prepare and cook delicious, home-style meals just the way you like them.</p>
+            <div class="modal-gallery">
+                <img src="kitchen.jpg" alt="Kitchen and Dining Area">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

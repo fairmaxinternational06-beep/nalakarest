@@ -1,0 +1,634 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Color Variables (Based on Logo) */
+:root {
+    --dark-green: #1b3b28;
+    --gold-brown: #a28352;
+    --light-bg: #f9f8f3;
+    --text-dark: #333;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--dark-green);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--gold-brown);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-green);
+    margin: 5px;
+}
+
+/* Hero Section */
+.hero {
+    height: 30vh; /* තිරයෙන් 30% ක පමණ උසක් (Banner size) */
+    min-height: 250px;
+    background: transparent; /* පසුබිම් වර්ණ ඉවත් කර ඇත */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--dark-green); /* සුදු පසුබිමට පෙනෙන සේ අකුරු තද කොළ පැහැ කර ඇත */
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 30px;
+    background-color: var(--gold-brown);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8c6e40;
+}
+
+/* Amenities Section */
+.amenities {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.amenities h2, .about h2 {
+    color: var(--dark-green);
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--gold-brown);
+}
+
+.card h3 {
+    color: var(--dark-green);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* About Section */
+.about {
+    padding: 80px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #555;
+    font-size: 18px;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: var(--light-bg);
+}
+
+.gallery h2, .contact h2 {
+    color: var(--dark-green);
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1); /* පින්තූරය මතට Mouse එක ගෙන ගිය විට තරමක් විශාල වේ */
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h3 {
+    color: var(--dark-green);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* WhatsApp Button Style */
+.whatsapp-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #25D366; 
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--gold-brown);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-green);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* Google Map Style */
+.map-container {
+    margin-top: 60px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid var(--gold-brown);
+}
+
+.map-container iframe {
+    width: 100%;
+    display: block;
+}
+
+/* House Rules Section - Single Card and Clean Design */
+.rules {
+    padding: 80px 10%;
+    /* خلفيه clean සුදු පැහැයෙන්, image එක ඉවත් කර ඇත */
+    background-color: #fff; 
+    text-align: center;
+    position: relative;
+    /* About image gradient එක ඉවත් කර ඇත */
+    background-image: none; 
+}
+
+/* overlay gradient එක hide කිරීම */
+.rules::before {
+    display: none;
+}
+
+.rules h2 {
+    color: #1b3b28; /* Primary Dark Green */
+    font-size: 36px;
+    margin-bottom: 50px;
+    /* පසුබිම overlay එකක් නොවන නිසා background gradient එකක් අවශ්‍ය නැත */
+}
+
+/* Card layout එක center කිරීම සහ width එක අඩු කිරීම */
+.rules-grid {
+    display: block; /* Grid එක block layout එකක් ලෙස වෙනස් කිරීම */
+    width: 100%;
+}
+
+/* single centered card */
+.no-smoking-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #1b3b28; /* Primary Dark Green */
+    text-align: center; /* සියල්ල center කිරීම */
+    /* readability සඳහා width එක අඩු කිරීම */
+    max-width: 500px;
+    margin: 0 auto; /* horizontal centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center items vertically */
+    gap: 10px; /* icon සහ title අතර පරතරය */
+}
+
+/* Enhanced Icon and Title styling */
+.no-smoking-card h3 {
+    color: #1b3b28; /* Primary Dark Green */
+    font-size: 20px;
+    margin: 0; /* padding reset */
+    display: flex;
+    flex-direction: column; /* Icon above title */
+    align-items: center;
+}
+
+/* Large and styled 🚫 Icon */
+.no-smoking-card h3 .smoking-icon {
+    font-size: 40px; /* කලින්ට වඩා විශාල */
+    color: #1b3b28; /* Primary Dark Green */
+    margin-bottom: 10px; /* Title එකට ඉහළින් */
+    opacity: 1; /* gradient overlay එකක් නොවන නිසා opacity 1 */
+}
+
+.no-smoking-card p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0; /* padding reset */
+}
+
+/* Nearby Attractions Section */
+.attractions {
+    padding: 80px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.section-desc {
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.attraction-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.attraction-card:hover {
+    transform: translateY(-5px);
+}
+
+.attraction-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.attraction-info {
+    padding: 20px;
+}
+
+.attraction-info h3 {
+    color: var(--dark-green);
+    margin-bottom: 10px;
+}
+
+.distance {
+    color: var(--gold-brown);
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.attraction-info p:last-child {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Reviews Section Styles */
+.reviews {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--gold-brown);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-card .stars {
+    color: #FFD700; /* තරු සඳහා රන් වර්ණය */
+    font-size: 24px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.review-card p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.review-card h4 {
+    color: var(--dark-green);
+    font-weight: bold;
+}
+
+/* Google Review Button Styles */
+.review-action {
+    margin-top: 50px;
+}
+
+.google-review-btn {
+    background-color: #fff;
+    color: var(--dark-green);
+    border: 2px solid var(--gold-brown);
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.google-review-btn:hover {
+    background-color: var(--gold-brown);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Mobile Responsiveness (ජංගම දුරකථන සඳහා) */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 60px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        padding-top: 50px;
+    }
+    
+    .nav-links li {
+        margin-bottom: 30px;
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .nav-active {
+        transform: translateX(0%);
+    }
+    
+    .hero-content h1 {
+        font-size: 35px;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+/* Amenities Cards Click Effect */
+.card {
+    cursor: pointer; /* Mouse එක ගෙන ගිය විට අතක හැඩය පෙන්වයි */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* ටිකක් උඩට ඉස්සේ */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.click-more {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--gold-brown);
+    font-weight: bold;
+}
+
+/* Modal (Pop-up) Styles */
+.modal {
+    display: none; /* මුලින් සඟවා තබයි */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* අඳුරු පසුබිම */
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    animation: modalFadeIn 0.4s;
+}
+
+@keyframes modalFadeIn {
+    from {top: -50px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: var(--dark-green);
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    color: var(--dark-green);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Modal Gallery */
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.modal-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+/* සංචාලන තීරුවේ වෙළඳ නාම කොටස (Brand section) */
+.brand {
+    display: flex;         /* අයිකනය සහ පෙළ එකට තබා ගනී */
+    align-items: center;  /* අයිකනය සහ පෙළ තිරස්ව මැදට පෙළගස්වයි */
+}
+
+/* නව ලාංඡන අයිකනය */
+.navbar-logo {
+    height: 35px;         /* එය සංචාලන තීරුවට ගැලපෙන සේ ඉතා කුඩා කරන්න */
+    width: auto;          /* අනුපාතය පවත්වා ගනී */
+    margin-right: 12px;   /* අයිකනය සහ පෙළ අතර කුඩා පරතරයක් ඇති කරයි */
+    vertical-align: middle; /* අමතර පෙළගැස්මක් සඳහා */
+}
