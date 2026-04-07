@@ -5,20 +5,21 @@ const nav = document.querySelector('.nav-links');
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
 });
-// WhatsApp Message Sending Function
+
+// WhatsApp Message Sending Function (Updated for Phone Number)
 function sendToWhatsApp(event) {
     event.preventDefault(); // Form එක නිකම්ම submit වී පිටුව Refresh වීම නවත්වයි
 
     // පාරිභෝගිකයා ඇතුළත් කළ දත්ත ලබා ගැනීම
     const name = document.getElementById('senderName').value;
-    const email = document.getElementById('senderEmail').value;
+    const phone = document.getElementById('senderPhone').value; // email වෙනුවට phone ලබා ගනී
     const message = document.getElementById('senderMessage').value;
 
-    // ඔබගේ WhatsApp දුරකථන අංකය (94 න් පටන් ගන්න, + ලකුණ එපා)
-    const phoneNumber = "94775099361"; // මෙතනට ඔබේ අංකය දාන්න
+    // ඔබගේ WhatsApp දුරකථන අංකය
+    const phoneNumber = "94775099361"; 
 
-    // WhatsApp වෙත යවන පණිවිඩය ලස්සනට පෙළගැස්වීම
-    const whatsappMessage = `*New Booking Inquiry - Nalaka Rest*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
+    // WhatsApp වෙත යවන පණිවිඩය (Email වෙනුවට Phone Number එක යවයි)
+    const whatsappMessage = `*New Booking Inquiry - Nalaka Rest*%0A%0A*Name:* ${name}%0A*Phone Number:* ${phone}%0A*Message:* ${message}`;
 
     // WhatsApp Link එක සැකසීම
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
@@ -26,6 +27,7 @@ function sendToWhatsApp(event) {
     // අලුත් Tab එකකින් WhatsApp විවෘත කිරීම
     window.open(whatsappURL, '_blank');
 }
+
 // Modal (Pop-up) Functionality
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
