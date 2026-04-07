@@ -15,7 +15,7 @@ function sendToWhatsApp(event) {
     const message = document.getElementById('senderMessage').value;
 
     // ඔබගේ WhatsApp දුරකථන අංකය (94 න් පටන් ගන්න, + ලකුණ එපා)
-    const phoneNumber = "94760419130"; // මෙතනට ඔබේ අංකය දාන්න
+    const phoneNumber = "94775099361"; // මෙතනට ඔබේ අංකය දාන්න
 
     // WhatsApp වෙත යවන පණිවිඩය ලස්සනට පෙළගැස්වීම
     const whatsappMessage = `*New Booking Inquiry - Nalaka Rest*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
