@@ -648,3 +648,20 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* හෙවණැල්ල තරමක් තද කළා පින්තූරය ලොකු නිසා */
     border: 3px solid #fff; /* පින්තූරය වටා සුදු පාට বෝඩරයක් (Optional) - මෙය එය තවත් කැපී පෙනීමට උදව් වේ */
 }
+
+/* Hero section style */
+.hero-content {
+    /* these are typical centering properties, they might already be in place */
+    display: flex;
+    flex-direction: column; /* elements align vertically */
+    align-items: center; /* center items horizontally */
+    justify-content: center; /* center items vertically */
+    text-align: center; /* ensure text is centered */
+}
+
+/* New style for the logo inside the hero section */
+.hero-logo {
+    width: 250px; /* ලෝගෝ එකට කැමති සයිස් එකක් මෙතනින් දෙන්න (උදා: 250px) */
+    height: auto; /* අනුපාතය නිවැරදිව තබා ගැනීමට */
+    margin-bottom: 30px; /* ලෝගෝ එක සහ මාතෘකාව (H1) අතර පරතරය */
+}
