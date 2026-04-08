@@ -632,3 +632,19 @@ footer {
     margin-right: 12px;   /* අයිකනය සහ පෙළ අතර කුඩා පරතරයක් ඇති කරයි */
     vertical-align: middle; /* අමතර පෙළගැස්මක් සඳහා */
 }
+
+/* Amenities section එකේ ලෝගෝ එක හැඩගැන්වීම - Size updated to 180x180 */
+.amenities-logo-container {
+    text-align: center; /* පින්තූරය මැදට ගැනීමට */
+    margin-bottom: 25px; /* පහළ ඇති කාඩ්පත් වලට ඇති පරතරය තරමක් වැඩි කළා */
+    margin-top: -15px; /* මාතෘකාවට තවත් ළං කිරීමට */
+}
+
+.amenities-logo {
+    width: 180px; /* පින්තූරයේ නිවැරදි පළල 180px */
+    height: 180px; /* පින්තූරයේ නිවැරදි උස 180px (සමචතුරස්‍ර කිරීමට) */
+    object-fit: cover; /* පින්තූරය ඇතුළත ඇදී යාම හෝ තැලීම වැළැක්වීමට (ගොඩක් වැදගත්) */
+    border-radius: 50%; /* පින්තූරය පරිපූර්ණ රවුමක් කිරීමට */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* හෙවණැල්ල තරමක් තද කළා පින්තූරය ලොකු නිසා */
+    border: 3px solid #fff; /* පින්තූරය වටා සුදු පාට বෝඩරයක් (Optional) - මෙය එය තවත් කැපී පෙනීමට උදව් වේ */
+}
