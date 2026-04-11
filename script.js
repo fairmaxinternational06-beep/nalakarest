@@ -46,3 +46,62 @@ window.onclick = function(event) {
         document.body.style.overflow = "auto";
     }
 }
+
+// Google Sheets Reviews Fetching Function
+async function fetchReviews() {
+    const apiLink = "https://docs.google.com/spreadsheets/d/1nX6doxP8twmodCnWDkvCA-KKRZ_EQqVgfF8coRy4_mc/gviz/tq?tqx=out:json"; // පියවර 2 දී සැදූ API ลින්ක් එක මෙතනට දාන්න
+    const container = document.getElementById('review-container');
+
+    try {
+        const response = await fetch(apiLink);
+        const data = await response.text();
+        
+        // Google Sheets API එකෙන් එන JSON data එක පිරිසිදු කිරීම
+        const json = JSON.parse(data.substr(47).slice(0, -2));
+        const rows = json.table.rows;
+
+        // රිවිවුස් Container එක හිස් කිරීම
+        container.innerHTML = '';
+
+        if (rows.length === 0) {
+            container.innerHTML = '<p class="no-reviews">No reviews yet. Be the first!</p>';
+            return;
+        }
+
+        // Sheet එකේ තියෙන හැම Row එකක් (Review) සඳහාම Card එකක් සෑදීම
+        rows.forEach(row => {
+            const name = row.c[1] ? row.c[1].v : "Anonymous"; // Name column (Col B)
+            const rating = row.c[2] ? row.c[2].v : 0; // Rating column (Col C)
+            const review = row.c[3] ? row.c[3].v : ""; // Review column (Col D)
+
+            // Rating එක අනුව තරු (Stars) සෑදීම
+            let starsHtml = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    starsHtml += '<span class="star-filled">★</span>';
+                } else {
+                    starsHtml += '<span class="star-empty">☆</span>';
+                }
+            }
+
+            // Review Card එකේ HTML එක
+            const reviewCard = `
+                <div class="review-card">
+                    <div class="stars">${starsHtml}</div>
+                    <p>"${review}"</p>
+                    <h4>- ${name}</h4>
+                </div>
+            `;
+            
+            // Card එක Container එකට එකතු කිරීම
+            container.innerHTML += reviewCard;
+        });
+
+    } catch (error) {
+        console.error("Error fetching reviews:", error);
+        container.innerHTML = '<p class="error-reviews">Unable to load reviews at this moment.</p>';
+    }
+}
+
+// වෙබ් අඩවිය Load වූ වහාම රිවිවුස් ලබා ගැනීම
+window.addEventListener('DOMContentLoaded', fetchReviews);
