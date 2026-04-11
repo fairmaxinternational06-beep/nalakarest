@@ -105,3 +105,54 @@ async function fetchReviews() {
 
 // වෙබ් අඩවිය Load වූ වහාම රිවිවුස් ලබා ගැනීම
 window.addEventListener('DOMContentLoaded', fetchReviews);
+
+
+// On-site Review Submission Function
+const reviewForm = document.getElementById('onsiteReviewForm');
+const reviewStatus = document.getElementById('reviewStatus');
+
+if (reviewForm) {
+    reviewForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // පිටුව Refresh වීම නවත්වයි
+        reviewStatus.textContent = 'Submitting...';
+        
+        // Form එකෙන් දත්ත ලබා ගැනීම
+        const name = document.getElementById('reviewName').value;
+        const rating = document.querySelector('input[name="rating"]:checked').value;
+        const review = document.getElementById('reviewMessage').value;
+        
+        // Google Form එකේ පසුබිම් SUBMIT ลින්ක් එක
+        // ඔබ ලබා දුන් ලින්ක් එකෙන් ගත් Form ID එක
+        const formId = "1FAIpQLSdq6FG-JM-1XlDV6wp3Ts7dm6muI_kfQUUkkFqJMg18RRtdXg"; 
+        const submitUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+        
+        // දත්ත යවන ආකෘතිය (Google Form Entry IDs)
+        // ඔබ ලබා දුන් ලින්ක් එකෙන් ගත් නිවැරදි IDs මෙහි දමා ඇත
+        const formData = new FormData();
+        formData.append('entry.1003674076', name);   // Name Entry ID
+        formData.append('entry.202819810', rating); // Rating Entry ID
+        formData.append('entry.1609009157', review); // Review Entry ID
+        
+        // Google Form එකට පසුබිමින් දත්ත යැවීම (fetch API හරහා)
+        // Note: Google Form එකෙන් CORS error එකක් ආවත්, දත්ත Sheet එකට සේව් වෙනවා.
+        fetch(submitUrl, {
+            method: 'POST',
+            mode: 'no-cors', // CORS ප්‍රශ්නය මඟහරින්න
+            body: formData
+        })
+        .then(() => {
+            // සාර්ථක පණිවිඩය
+            reviewStatus.textContent = 'Thank you for your review! It will appear on the site soon.';
+            reviewStatus.style.color = '#2ecc71'; // Green color
+            reviewForm.reset(); // Form එක හිස් කිරීම
+            
+            // විනාඩි කිහිපයකින් රිවිවුස් නැවත Load කිරීම (අලුත් එක පෙන්වීමට)
+            setTimeout(fetchReviews, 2000); 
+        })
+        .catch((error) => {
+            console.error('Error submitting review:', error);
+            reviewStatus.textContent = 'Oops! Something went wrong. Please try again later.';
+            reviewStatus.style.color = '#e74c3c'; // Red color
+        });
+    });
+}
