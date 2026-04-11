@@ -665,3 +665,89 @@ footer {
     height: auto; /* අනුපාතය නිවැරදිව තබා ගැනීමට */
     margin-bottom: 30px; /* ලෝගෝ එක සහ මාතෘකාව (H1) අතර පරතරය */
 }
+
+
+/* Google Sheets Reviews Styling */
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.review-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #f1c40f; /* Golden yellow for stars */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.star-filled {
+    margin-right: 2px;
+}
+
+.star-empty {
+    color: #e0e0e0; /* Light gray for empty stars */
+    margin-right: 2px;
+}
+
+.review-card p {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.review-card h4 {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Review Action Button Styling */
+.review-action {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.review-action p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.google-review-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2ecc71; /* Green color for the button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.google-review-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Loading/Error Messages */
+.loading-reviews, .no-reviews, .error-reviews {
+    text-align: center;
+    color: #888;
+    grid-column: 1 / -1; /* Make message take full width */
+    padding: 40px;
+}
