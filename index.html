@@ -305,15 +305,35 @@
 
 <section id="reviews" class="reviews">
     <h2>Guest Reviews</h2>
+    
     <div id="review-container" class="review-grid">
         <p class="loading-reviews">Loading reviews...</p>
     </div>
     
-    <div class="review-action">
-        <p>Stayed with us? We'd love to hear your feedback!</p>
-        <a href="https://docs.google.com/spreadsheets/d/1nX6doxP8twmodCnWDkvCA-KKRZ_EQqVgfF8coRy4_mc/edit?usp=sharing" target="_blank" class="google-review-btn">
-            📝 Write a Review
-        </a>
+    <div class="write-review-section">
+        <h3>Write a Review</h3>
+        <p>Share your experience with us!</p>
+        
+        <form id="onsiteReviewForm">
+            <input type="text" id="reviewName" placeholder="Your Name" required>
+            
+            <div class="rating-picker">
+                <label>Your Rating:</label>
+                <div class="stars-radio">
+                    <input type="radio" name="rating" value="5" id="star5" required><label for="star5">★</label>
+                    <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
+                    <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>
+                    <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
+                    <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
+                </div>
+            </div>
+            
+            <textarea id="reviewMessage" rows="4" placeholder="Your Review" required></textarea>
+            
+            <button type="submit" class="btn">Submit Review</button>
+        </form>
+        
+        <p id="reviewStatus" class="review-status"></p>
     </div>
 </section>
     
